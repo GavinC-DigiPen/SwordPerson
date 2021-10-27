@@ -2,7 +2,7 @@
 //
 // File Name:	GameManager.cs
 // Author(s):	Gavin Cooper (gavin.cooper@digipen.edu)
-// Project:	    SwordMan
+// Project:	    SwordPerson
 // Course:	    WANIC VGP2
 //
 // Copyright © 2021 DigiPen (USA) Corporation.
@@ -17,9 +17,23 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    private static int maxLives = 3;
     private static int currentLives = 3;
 
     public static UnityEvent OnLivesChange = new UnityEvent();
+
+    public static int MaxLives
+    {
+        get
+        {
+            return maxLives;
+        }
+        set
+        {
+            maxLives = value;
+            OnLivesChange.Invoke();
+        }
+    }
 
     public static int CurrentLives
     {
