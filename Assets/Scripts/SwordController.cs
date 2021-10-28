@@ -59,8 +59,11 @@ public class SwordController : MonoBehaviour
         swordTimer -= Time.deltaTime;
         cooldownTimer -= Time.deltaTime;
 
-        dirrection = (Camera.main.WorldToScreenPoint(transform.position) - Input.mousePosition).normalized;
-        angle = Mathf.Atan2(dirrection.x, dirrection.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+        if (swinging == false)
+        {
+            dirrection = (Camera.main.WorldToScreenPoint(transform.position) - Input.mousePosition).normalized;
+            angle = Mathf.Atan2(dirrection.x, dirrection.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+        }
     }
 }

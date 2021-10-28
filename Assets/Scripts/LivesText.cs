@@ -2,7 +2,7 @@
 //
 // File Name:	LivesText.cs
 // Author(s):	Gavin Cooper (gavin.cooper@digipen.edu)
-// Project:	    SwordMan
+// Project:	    SwordPerson
 // Course:	    WANIC VGP2
 //
 // Copyright © 2021 DigiPen (USA) Corporation.

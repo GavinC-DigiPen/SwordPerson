@@ -2,7 +2,7 @@
 //
 // File Name:	PersonLives.cs
 // Author(s):	Gavin Cooper (gavin.cooper@digipen.edu)
-// Project:	    SwordMan
+// Project:	    SwordPerson
 // Course:	    WANIC VGP2
 //
 // Copyright © 2021 DigiPen (USA) Corporation.
@@ -19,8 +19,9 @@ public class PersonLives : MonoBehaviour
     public int startingLives = 3;
     [Tooltip("The amount of time after getting hit where the player cant take damage")]
     public float immuneTime = 1;
+    [Tooltip("Prefab to be summoned on hit, a particle effect")]
+    public GameObject particleEffect;
 
-    private Rigidbody2D playerRB;
     private SpriteRenderer playerSR;
 
     private Vector2 respawnLocation;
@@ -29,12 +30,12 @@ public class PersonLives : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerRB = GetComponent<Rigidbody2D>();
         playerSR = GetComponent<SpriteRenderer>();
 
         respawnLocation = transform.position;
-
         GameManager.CurrentLives = startingLives;
+
+        GameManager.OnLivesChange.AddListener(SummonEffect);
 
         NewColor();
     }
@@ -85,5 +86,14 @@ public class PersonLives : MonoBehaviour
     {
         transform.position = respawnLocation;
         GameManager.CurrentLives = startingLives;
+    }
+
+    // Summon a prefab that is a particle effect
+    private void SummonEffect()
+    {
+        if (particleEffect)
+        {
+            Instantiate(particleEffect, transform.position, Quaternion.identity);
+        }
     }
 }

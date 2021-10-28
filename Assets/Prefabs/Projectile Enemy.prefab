@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 6205332151840931479}
   - component: {fileID: 6205332151840931472}
   - component: {fileID: 6205332151840931473}
+  - component: {fileID: 4063998235201555410}
   m_Layer: 0
   m_Name: Projectile Enemy
   m_TagString: Untagged
@@ -407,3 +408,16 @@ MonoBehaviour:
   shootingEnemyColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   projectilePrefab: {fileID: 5630084353763690686, guid: c2d4db074dc22a9478d38bd7f9308ba4,
     type: 3}
+--- !u!114 &4063998235201555410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205332151840931484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20eddcc4b4c066749818790a1f1f0198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDamage: 1

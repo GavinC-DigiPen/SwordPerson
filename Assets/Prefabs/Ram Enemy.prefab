@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 1
-  moveSpeed: 2
+  moveSpeed: 2.5
   slowDownSpeed: 0.01
   detectionRange: 15
 --- !u!1 &5168623895421246775
