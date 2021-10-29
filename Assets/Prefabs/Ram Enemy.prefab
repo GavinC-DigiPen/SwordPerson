@@ -329,6 +329,8 @@ MonoBehaviour:
   moveSpeed: 2.5
   slowDownSpeed: 0.01
   detectionRange: 15
+  particleEffect: {fileID: 1919685820162962862, guid: d2fd588b5ee646846a011a3269c80aaf,
+    type: 3}
 --- !u!1 &5168623895421246775
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,13 @@
-﻿////////////////////////////
-/// By: Gavin C
-/// Date: 11/6/2020
-/// Desription: This is a script to be access via unity events to change the scene
-///////////////////////////
+﻿//------------------------------------------------------------------------------
+//
+// File Name:	ChangeSceneEvent.cs
+// Author(s):	Gavin Cooper (gavin.cooper@digipen.edu)
+// Project:	    SwordPerson
+// Course:	    WANIC VGP2
+//
+// Copyright © 2021 DigiPen (USA) Corporation.
+//
+//------------------------------------------------------------------------------
 
 using System.Collections;
 using System.Collections.Generic;

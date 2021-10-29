@@ -37,6 +37,8 @@ public class ChargeEnemy : MonoBehaviour
     public float chargeLocationPrecision = 0.25f;
     [Tooltip("The color of the enemy when they are charging")]
     public Color chargingEnemyColor;
+    [Tooltip("Prefab to be summoned on hit, a particle effect")]
+    public GameObject particleEffect;
 
     private Rigidbody2D enemyRB;
     private SpriteRenderer enemySR;
@@ -100,6 +102,7 @@ public class ChargeEnemy : MonoBehaviour
         if (swordDataScript)
         {
             health -= swordDataScript.swordDamage;
+            Instantiate(particleEffect, transform.position, Quaternion.identity);
 
             if (health <= 0)
             {
@@ -117,14 +120,14 @@ public class ChargeEnemy : MonoBehaviour
         Invoke("ResetChargingCooldown", chargeCooldownTime);
     }
 
+    // Charge toward the location
     private void ChargeCharge()
     {
         dirrection = (chargeLocation - transform.position).normalized;
         enemyRB.velocity = dirrection * chargeSpeed;
     }
 
-
-
+    // Reset the charging
     private void ResetChargingCooldown()
     {
         charging = false;

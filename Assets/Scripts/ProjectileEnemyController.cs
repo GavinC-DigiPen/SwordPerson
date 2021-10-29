@@ -37,6 +37,8 @@ public class ProjectileEnemyController : MonoBehaviour
     public Color shootingEnemyColor;
     [Tooltip("The prefab of an object that will be the projectile")]
     public GameObject projectilePrefab;
+    [Tooltip("Prefab to be summoned on hit, a particle effect")]
+    public GameObject particleEffect;
 
     private Rigidbody2D enemyRB;
     private SpriteRenderer enemySR;
@@ -93,6 +95,7 @@ public class ProjectileEnemyController : MonoBehaviour
         if (swordDataScript)
         {
             health -= swordDataScript.swordDamage;
+            Instantiate(particleEffect, transform.position, Quaternion.identity);
 
             if (health <= 0)
             {
@@ -101,6 +104,7 @@ public class ProjectileEnemyController : MonoBehaviour
         }
     }
 
+    // Summon the projecile, rotate it, and add force
     private void ShootProjectile()
     {
         enemySR.color = startingColor;
@@ -115,6 +119,7 @@ public class ProjectileEnemyController : MonoBehaviour
         Invoke("ResetShootingCooldown", shootCooldownTime);
     }
 
+    // Reset shooting
     private void ResetShootingCooldown()
     {
         shooting = false;

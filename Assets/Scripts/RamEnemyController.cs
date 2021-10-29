@@ -23,6 +23,8 @@ public class RamEnemyController : MonoBehaviour
     public float slowDownSpeed = 0.01f;
     [Tooltip("The range at which the enemy will detect the player")]
     public float detectionRange = 10;
+    [Tooltip("Prefab to be summoned on hit, a particle effect")]
+    public GameObject particleEffect;
 
     private Rigidbody2D enemyRB;
     private GameObject target;
@@ -50,7 +52,6 @@ public class RamEnemyController : MonoBehaviour
         }
     }
 
-
     // Check for collision with sword
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,6 +59,7 @@ public class RamEnemyController : MonoBehaviour
         if (swordDataScript)
         {
             currentHealth -= swordDataScript.swordDamage;
+            Instantiate(particleEffect, transform.position, Quaternion.identity);
 
             if (currentHealth <= 0)
             {

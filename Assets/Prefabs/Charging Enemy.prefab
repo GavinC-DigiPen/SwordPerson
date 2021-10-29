@@ -258,6 +258,8 @@ MonoBehaviour:
   chargeOverShoot: 0.25
   chargeLocationPrecision: 0.25
   chargingEnemyColor: {r: 0.5568628, g: 0.5568628, b: 0.5568628, a: 1}
+  particleEffect: {fileID: 1919685820162962862, guid: d2fd588b5ee646846a011a3269c80aaf,
+    type: 3}
 --- !u!1 &5265643329875976592
 GameObject:
   m_ObjectHideFlags: 0

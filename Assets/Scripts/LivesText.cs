@@ -26,6 +26,6 @@ public class LivesText : MonoBehaviour
     // Update text
     void UpdateText()
     {
-        GetComponent<TextMeshProUGUI>().text = " Lives: " + GameManager.CurrentLives;
+        GetComponent<TextMeshProUGUI>().text = " Lives: " + GameManager.CurrentLives + "/" + GameManager.MaxLives;
     }
 }

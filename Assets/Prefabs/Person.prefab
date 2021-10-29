@@ -388,3 +388,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLives: 3
   immuneTime: 1
+  particleEffect: {fileID: 1919685820162962862, guid: d2fd588b5ee646846a011a3269c80aaf,
+    type: 3}

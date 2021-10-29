@@ -47,7 +47,7 @@ public class PersonLives : MonoBehaviour
     }
 
     // Check for collision with enemy
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (immuneTimer <= 0)
         {
@@ -61,7 +61,7 @@ public class PersonLives : MonoBehaviour
 
             if (GameManager.CurrentLives <= 0)
             {
-                Respawn();
+                Invoke("Respawn", 0.5f);
             }
         }
     }
@@ -91,7 +91,7 @@ public class PersonLives : MonoBehaviour
     // Summon a prefab that is a particle effect
     private void SummonEffect()
     {
-        if (particleEffect)
+        if (GameManager.CurrentLives < GameManager.MaxLives)
         {
             Instantiate(particleEffect, transform.position, Quaternion.identity);
         }
